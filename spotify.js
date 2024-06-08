@@ -157,7 +157,6 @@ createApp({
           subtitulo: 'Yesan 雪山 • ',
           inter: 'Yesan',
           details: '26 de Diciembre 2024',
-          new: '#10 Tendencias',
           production: 'Yesan',
           dailyStreams: 536048019,
           fecha: '26/12/24',
@@ -175,7 +174,6 @@ createApp({
           subtitulo: 'SGustinProd • ',
           inter: 'N/A',
           details: '29 de Diciembre 2023',
-          new: '#2 Tendencias',
           production: 'SGustinProd',
           dailyStreams: 536048019,
           fecha: '29/12/23',
@@ -187,7 +185,6 @@ createApp({
           subtitulo: 'GONZA • ',
           inter: 'Gonza',
           details: '03 de Diciembre 2023',
-          new: '#15 Tendencias',
           production: 'Zecca',
           dailyStreams: 536048019,
           fecha: '03/12/23',
@@ -210,9 +207,8 @@ createApp({
           subtitulo: 'Travis Scott • ',
           inter: 'Jacques Webster, Kendrick duckworth, Ronald LaTour, Daveon Jackson, Tim Gomringer, Kevin Gomringer, Brock Korsan',
           details: '13 de Diciembre 2023',
-          new: '#1 Tendencias',
           production: 'Cardo, Cubeatz, YeX',
-          dailyStreams: 73048267,
+          dailyStreams: 764123649,
           fecha: '13/12/23',
         },
         {
@@ -1395,7 +1391,7 @@ createApp({
         {
           id: 4,
           nome: 'El Amor De Mi Vida',
-          img: 'https://i.scdn.co/image/ab67706c0000da84cac528707ab2c6031f425af3',
+          img: 'https://i.scdn.co/image/ab67616d0000b2731ba9cc2d815c0c60c5060681',
           subtitulo: 'Maria Becerra & Angeles Azules • ',
           inter: 'Maria Becerra, Angeles Azules',
           details: '27 de Septiembre 2023',
@@ -1451,7 +1447,7 @@ createApp({
         return 'Buenas Noches 🌙'
       }else if (horario >= 12) {
         return 'Buenas Tardes ☀'
-      }else if(horario >= 01) {
+      }else if(horario >= 1) {
         return 'Buenos Dias 🌞'
       }
     },
