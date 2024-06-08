@@ -1406,7 +1406,7 @@ createApp({
           inter: 'Rombai & Cami',
           details: '01 de Septiembre 2023',
           production: 'Spotify, Angeles Azules',
-          dailyStreams: 826413630,
+          dailyStreams: 900123463,
           fecha: '12/2/23'
         },
       ]
