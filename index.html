@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Finanzas Argy</title>
+  <title>Exchange Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   <link rel="icon" href="https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png">
+  <link rel="icon" href="https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="QuintoStyles.css">
   <style>
     body {
@@ -17,157 +17,96 @@
       flex-direction: column;
       padding: 20px;
     }
-    .ticker-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      margin-bottom: 20px;
-      --chakra-colors-blackAlpha-400
-      color: var(--chakra-colors-darkGray);
-      margin-right: 4px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    
+    .a1czirwi {
+        line-height: 26px;
+        margin-inline: 0px;
+        font-size: 24px;
+        font-family: var(--chakra-fonts-sairaCondensed);
+        font-weight: var(--chakra-fontWeights-bold);
+        letter-spacing: -0.13px;
+        color: var(--chakra-colors-lightGray);
     }
-    .tickercotizations {
-      --chakra-colors-blackAlpha-400
-        color: var(--chakra-colors-darkGray);
-        margin-right: 4px;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
+    .card .back, .card .front {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
-    .ticker {
-      display: inline-block;
-      animation: ticker 15s linear infinite;
+    .e34o4ue {
+        flex: 1 1 0%;
+        padding: 15px;
+        min-width: 184px;
     }
-    .ticker span {
-      margin-right: 40px;
-      font-size: 1.2em;
-      align-items: center;
+    .ttrolr {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        min-width: 0px;
+        overflow-wrap: break-word;
+        --card-bg: var(--chakra-colors-chakra-body-bg);
+        background-color: var(--chakra-colors-lightBlack);
+        box-shadow: var(--card-shadow);
+        color: var(--chakra-colors-font);
+        border-width: var(--card-border-width, 0);
+        border-color: var(--card-border-color);
+        --card-radius: var(--chakra-radii-md);
+        --card-padding: var(--chakra-space-5);
+        --card-shadow: var(--chakra-shadows-base);
+        display: none;
+        border-radius: 11px;
+        width: 184px;
+        height: 179px;
+        margin: 0px;
     }
-    @keyframes ticker {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-      
+    .i34o4ue {
+        flex: 1 1 0%;
+        padding: 15px;
+        min-width: 184px;
     }
-    .dashboard {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      justify-content: center;
+    .E136815 {
+        display: flex
+    ;
+        -webkit-box-align: center;
+        align-items: center;
+        margin-bottom: 8.88px;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        max-width: 155px;
+        max-height: 30px;
     }
-    .currency-card {
-      background-color: #222222;
-      border-radius: 10px;
-      width: 220px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      font-family: var(--chakra-fonts-heading);
-      line-height: 1.2;
-      font-size: 19px;
-      text-align: left;
-      font-weight: var(--chakra-fontWeights-bold);
-      margin-right: var(--chakra-space-0-5);
-      text-transform: lowercase;
-      white-space: nowrap;
-      overflow: visible;
-    }
-    .header h3 {
-      font-size: 1.2em;
-    }
-    .status-indicator {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-    .status-indicator.up {
-      background-color: rgb(7 242 199); /* Verde para alza */
-    }
-    .status-indicator.down {
-      background-color: #FF4D6D; /* Rojo para baja */
-    }
-    .prices {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      font-family: var(--chakra-fonts-heading);
-      line-height: 1.2;
-      font-size: 19px;
-      text-align: left;
-      font-weight: var(--chakra-fontWeights-bold);
-      margin-right: var(--chakra-space-0-5);
-      text-transform: lowercase;
-      white-space: nowrap;
-      overflow: visible;
-    }
-    .price {
-      display: flex;
-      
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .price strong {
-      font-size: 1.1em;
-    }
-    .trend {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.9em;
-    }
-    .change.neutral {
-      color: #cccccc;
-    }
-    .change.up {
-      color: rgb(7 242 199); /* Verde */
-    }
-    .change.down {
-      
-      color: #FF4D6D; /* Rojo */
-    }
-    .css-o8013y {
+    .E1s3kejl {
         font-family: var(--chakra-fonts-heading);
         line-height: 1.2;
-        font-size: 19px;
+        font-size: 14px;
         text-align: left;
         font-weight: var(--chakra-fontWeights-bold);
-        margin-right: var(--chakra-space-0-5);
         text-transform: lowercase;
-        white-space: nowrap;
-        overflow: visible;
     }
-    .ultimavez {
-      --chakra-colors-darkGray: #5F5F5F;
-        margin-left: 3px;
-        align-self: end;
-        font-size: 11px;
-        color: var(--chakra-colors-darkGray);
-        font-weight: var(--chakra-fontWeights-medium);
+    .miniature-clock {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid #161616;
+        transform: scale(.9);
     }
-    .buy {
-      --chakra-colors-darkGray: #5F5F5F;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      line-height: 24px;
-      margin-inline: 0px;
-      font-size: 22px;
-      font-family: var(--chakra-fonts-sairaCondensed);
-      font-weight: var(--chakra-fontWeights-semibold);
-      letter-spacing: 0.3px;
-      color: var(--chakra-colors-darkGray);
+    .clock-face, .hand {
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
-    .Venta-Square {
+    .a1rfoj5o {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    ;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-weight: var(--chakra-fontWeights-bold);
+    }
+    .a1284n34 {
         background-color: var(--chakra-colors-black);
         outline-color: var(--chakra-colors-transparent);
         font-family: var(--chakra-fonts-saira);
@@ -187,8 +126,142 @@
         transition: 0.1s ease-in-out all;
         text-transform: uppercase;
     }
+    .artprq {
+        color: var(--chakra-colors-darkGray);
+        font-size: 18px;
+        font-family: var(--chakra-fonts-sairaCondensed);
+        line-height: 0;
+        font-weight: var(--chakra-fontWeights-bold);
+        margin-inline: 1px;
+    }
+    .g0vnma {
+        background-color: var(--chakra-colors-transparent);
+        outline-color: var(--chakra-colors-lightBlue);
+        font-family: var(--chakra-fonts-sairaSemiCondensed);
+        font-weigth: semibold;
+        color: var(--chakra-colors-gray);
+        width: 51px;
+        margin-left: -4px;
+        height: 18px;
+        border-radius: 3px;
+        outline-style: solid;
+        outline-width: 0.5px;
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 0.24px;
+        padding: 2px 5px 1.5px;
+        -webkit-transition: 0.1s ease-in-out all;
+        transition: 0.1s ease-in-out all;
+        text-transform: uppercase;
+    }
+    .h6s7t7 {
+        line-height: 24px;
+        margin-inline: 0px;
+        font-size: 22px;
+        font-family: var(--chakra-fonts-sairaCondensed);
+        font-weight: var(--chakra-fontWeights-semibold);
+        letter-spacing: 0.3px;
+        color: var(--chakra-colors-darkGray);
+    }
+    .ja9dku {
+        display: flex
+    ;
+        -webkit-box-align: baseline;
+        align-items: baseline;
+        margin-top: 10px;
+        justify-content: space-around;
+    }
+    .i9msno {
+        display: flex
+    ;
+        padding: 2px 10px;
+        border-radius: 3px;
+        background-color: var(--chakra-colors-gray);
+        color: var(--chakra-colors-lightBlack);
+        -webkit-box-align: center;
+        align-items: center;
+        border: 1px solid;
+        font-weight: var(--chakra-fontWeights-semibold);
+        width: 66px;
+        height: 18px;
+      .cardBox {
+          transition: all .3s ease 0s;
+          border-radius: 11px;
+          display: block;
+      }
+      .a4mkswm {
+          display: flex
+      ;
+          font-size: 10px;
+          font-family: var(--chakra-fonts-sairaSemiCondensed);
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          align-items: center;
+          text-align: left;
+          margin-top: 14px;
+          margin-bottom: 10px;
+      }
+      .a135do9d {
+          display: flex
+      ;
+          justify-content: space-around;
+          -webkit-box-align: center;
+          align-items: center;
+      }
+      .tj9yu4 {
+          letter-spacing: 0.11px;
+          color: var(--chakra-colors-blue);
+          text-align: left;
+          line-height: 13.2px;
+          cursor: pointer;
+          font-size: 13px;
+          font-family: var(--chakra-fonts-sairaSemiCondensed);
+          font-weight: var(--chakra-fontWeights-semibold);
+          opacity: 0.4;
+      }
+      @media screen and (min-width: 48em) {
+          .css-12yfeo {
+              display: none;
+          }
+      }
+      @media screen and (min-width: 30em) {
+          .css-12yfeo {
+              padding: 18px 19px;
+          }
+      }
+      .cardBox .card {
+          animation: giro 1.5s 1;
+      }
+      .card {
+          transform-style: preserve-3d;
+          transition: transform .4s ease 0s;
+          animation: giro 1s 1;
+      }
+      .e70qvj9 {
+          display: flex
+      ;
+          -webkit-box-align: center;
+          align-items: center;
+      }
+      .emcyhi {
+          margin-left: 3px;
+          align-self: end;
+          font-size: 11px;
+          color: var(--chakra-colors-darkGray);
+          font-weight: var(--chakra-fontWeights-medium);
+      }
+      .cardBox .card {
+          animation: giro 1.5s 1;
+      }
+      .card {
+          transform-style: preserve-3d;
+          transition: transform .4s ease 0s;
+          animation: giro 1s 1;
+      }
   </style>
 </head>
+    
   <!-- Sección de ticker para mostrar cotizaciones en movimiento -->
   <div class="ticker-container">
     <div class="ticker" id="ticker">
@@ -205,10 +278,20 @@
         </ul>
      </nav>
   </div>
-<body>
-
-  <div class="dashboard" id="dashboard"></div>
-
+<body>  
+  <div class="css-12gkw7z">
+    <div class="css-dvxtzn"><a target="_blank" rel="noopener noreferrer" class="chakra-link css-1sojmgf" href="https://airtm-web.app.link/e/USVA-PayPal-FinanzasArgy"><img alt="imagen" src="https://i.postimg.cc/fL7tN3Ft/Finanzas-Argy-01-0.gif" class="chakra-image css-th88q6"></a></div>
+    <div class="css-4qsayy">
+      <div class="css-19l7epd">
+        
+        <main class="dashboard" id="dashboard">
+          </main>
+      </div>
+      <div class="css-1o3g8cs"><p class="chakra-text css-1scqrm2">Ultima actualización:</p><p class="chakra-text css-1fyayx3">17/11/2024 - 18:00hs (ARG)</p></div>
+    </div>
+      <div class="css-dvxtzn"><a target="_blank" rel="noopener noreferrer" class="chakra-link css-1sojmgf" href="https://buenbit.onelink.me/A1PW/finanzasargy"><img alt="imagen" src="https://i.postimg.cc/nrvsM6ps/Finanzas-Argy-2.gif" class="chakra-image css-th88q6"></a><ins class="adsbygoogle vertical hidden" data-ad-client="ca-pub-4916962240247997" data-ad-slot="9112822975" data-full-width-responsive="true"></ins></div>
+  </div>
+  
   <script>
     // Datos simulados para el ticker de otras cotizaciones
     const tickerData = [
@@ -243,7 +326,7 @@
       card.classList.add('currency-card');
 
       card.innerHTML = `
-        <div class="header">
+     <div class="header">
           <h3>${currency.name}</h3>
           <span class="status-indicator ${currency.trend === 'up' ? 'up' : (currency.trend === 'down' ? 'down' : 'neutral')}"></span>
         </div>
@@ -269,5 +352,8 @@
   </script>
 </body>
 
+  
+  <script>
+  </script>
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="Quinto.js"></script>
 </html>
