@@ -4,6 +4,313 @@ body {
   font-family:lato;
 }
 
+body {
+  background-color: #161616;
+  color: #ffffff;
+  font-family: slick, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+main {
+    display: block;
+}
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  --chakra-colors-blackAlpha-400
+  color: var(--chakra-colors-darkGray);
+  margin-right: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+}
+.tickercotizations {
+  --chakra-colors-blackAlpha-400
+    color: var(--chakra-colors-darkGray);
+    margin-right: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.ticker {
+  display: inline-block;
+  animation: ticker 15s linear infinite;
+}
+.ticker span {
+  margin-right: 40px;
+  font-size: 1.2em;
+  align-items: center;
+}
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+
+}
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+.AdFree {
+  cursor: pointer;
+      width: 160px;
+      height: 600px;
+      border-radius: 8px;
+  }
+
+}
+.currency-card {
+    animation: giro 1.5s 1;
+}
+.currency-card {
+  border-radius: 11px;
+  width: 184px;
+  height: 179px;
+  margin: 0px;
+  transpaerancy: 1;
+  background-color: #222222;
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: var(--chakra-fonts-heading);
+  line-height: 1.2;
+  font-size: 19px;
+  text-align: left;
+  font-weight: var(--chakra-fontWeights-bold);
+  margin-right: var(--chakra-space-0-5);
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: visible;
+}
+.header h3 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.status-indicator.up {
+  background-color: rgb(7 242 199); /* Verde para alza */
+}
+.status-indicator.down {
+  background-color: #FF4D6D; /* Rojo para baja */
+}
+.prices {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: var(--chakra-fonts-heading);
+  line-height: 1.2;
+  font-size: 19px;
+  text-align: left;
+  font-weight: var(--chakra-fontWeights-bold);
+  margin-right: var(--chakra-space-0-5);
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: visible;
+}
+.price {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+.price strong {
+  font-size: 1.1em;
+}
+.trend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+.change.neutral {
+  color: #cccccc;
+}
+.change.up {
+  color: rgb(7 242 199); /* Verde */
+}
+.change.down {
+
+  color: #FF4D6D; /* Rojo */
+}
+.css-o8013y {
+    font-family: var(--chakra-fonts-heading);
+    line-height: 1.2;
+    font-size: 19px;
+    text-align: left;
+    font-weight: var(--chakra-fontWeights-bold);
+    margin-right: var(--chakra-space-0-5);
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: visible;
+}
+main {
+    display: block;
+}
+.ultimavez {
+  --chakra-colors-darkGray: #5F5F5F;
+    margin-left: 3px;
+    align-self: end;
+    font-size: 11px;
+    color: var(--chakra-colors-darkGray);
+    font-weight: var(--chakra-fontWeights-medium);
+}
+.buy {
+  --chakra-colors-darkGray: #5F5F5F;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 24px;
+  margin-inline: 0px;
+  font-size: 22px;
+  font-family: var(--chakra-fonts-sairaCondensed);
+  font-weight: var(--chakra-fontWeights-semibold);
+  letter-spacing: 0.3px;
+  color: var(--chakra-colors-darkGray);
+}
+.css-th88q6 {
+    cursor: pointer;
+    width: 160px;
+    height: 600px;
+    border-radius: 8px;
+}
+.Venta-Square {
+    background-color: var(--chakra-colors-black);
+    outline-color: var(--chakra-colors-transparent);
+    font-family: var(--chakra-fonts-saira);
+    font-weigth: bold;
+    color: rgba(0, 150, 239, 0.6);
+    width: 55px;
+    margin-left: 0px;
+    height: 18px;
+    border-radius: 3px;
+    outline-style: solid;
+    outline-width: 0.5px;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0.24px;
+    padding: 2px 5px 1.5px;
+    -webkit-transition: 0.1s ease-in-out all;
+    transition: 0.1s ease-in-out all;
+    text-transform: uppercase;
+}
+.css-th88q6 {
+    cursor: pointer;
+    width: 160px;
+    height: 600px;
+    border-radius: 8px;
+}
+.css-12gkw7z {
+    display: grid
+;
+    gap: var(--chakra-space-1);
+    grid-template-columns: 160px 1fr 160px;
+    height: 100%;
+    max-width: 1180px;
+    -webkit-box-align: start;
+    align-items: start;
+    margin: 0px auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.css-4qsayy {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: var(--chakra-sizes-full);
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+}
+.css-1o3g8cs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+;
+    margin-top: 10px;
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    -webkit-margin-end: auto;
+    margin-inline-end: auto;
+    margin-bottom: 19px;
+    -webkit-align-items: baseline;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex-flow: nowrap;
+    -webkit-flex-flow: nowrap;
+    -ms-flex-flow: nowrap;
+    flex-flow: nowrap;
+    font-weight: var(--chakra-fontWeights-medium);
+    color: var(--chakra-colors-lightGray);
+    font-size: 11px;
+}
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 7px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
 table {
   margin:auto;
   width:10em;
