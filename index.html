@@ -310,7 +310,7 @@
     ];
 
     const riesgos = [
-        { name: 'RIESGO PAÍS', sell: '7,04' , change: '-8,24%', time: '18/11/25 - 18:10', trend: 'down' },
+        { name: 'RIESGO PAÍS', sell: '7,04' , change: '-8,24%', time: '18/11/25 - 18:10', trend: 'down2' },
       ];
 
     const ticker = document.getElementById('ticker');
@@ -361,7 +361,7 @@
         card.innerHTML = `
        <div class="header">
             <h15>${riesgos.name}</h15>
-            <span class="status-indicator ${riesgos.trend === 'up' ? 'up' : (riesgos.trend === 'down' ? 'down' : 'neutral')}"></span>
+            <span class="status-indicator2 ${riesgos.trend === 'up2' ? 'up2' : (riesgos.trend === 'down2' ? 'down2' : 'neutral')}"></span>
           </div>
           <div class="riesgo4">
             <div class="priceriesgo">
@@ -369,7 +369,7 @@
             </div>
           </div>
           <div class="trend">
-            <span class="change ${riesgos.trend}">${riesgos.change}</span>
+            <span class="change2 ${riesgos.trend}">${riesgos.change}</span>
             <span class="ultimavez">${riesgos.time}</ultimavez>
           </div>
         `;
