@@ -23,7 +23,6 @@ main {
   white-space: nowrap;
   box-sizing: border-box;
   margin-bottom: 20px;
-  --chakra-colors-blackAlpha-400
   color: var(--chakra-colors-darkGray);
   margin-right: 4px;
   font-size: 12px;
@@ -32,7 +31,6 @@ main {
 
 }
 .tickercotizations {
-  --chakra-colors-blackAlpha-400
     color: var(--chakra-colors-darkGray);
     margin-right: 4px;
     font-size: 12px;
@@ -46,6 +44,12 @@ main {
 .ticker span {
   margin-right: 40px;
   font-size: 1.2em;
+  align-items: center;
+}
+
+.span2 {
+  font-size: 5em;
+  font-weight: bold;
   align-items: center;
 }
 @keyframes ticker {
@@ -66,16 +70,13 @@ main {
       border-radius: 8px;
   }
 
-}
 .currency-card {
     animation: giro 1.5s 1;
 }
+
 .currency-card {
-  border-radius: 11px;
-  width: 184px;
   height: 179px;
   margin: 0px;
-  transpaerancy: 1;
   background-color: #222222;
   border-radius: 10px;
   width: 220px;
@@ -83,6 +84,35 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
+
+.A10 {
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: var(--chakra-fonts-heading);
+  line-height: 1.2;
+  font-size: 19px;
+  text-align: left;
+  font-weight: var(--chakra-fontWeights-bold);
+  margin-right: var(--chakra-space-0-5);
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.riesgo-card {
+  height: 149px;
+  margin: 0px;
+  background-color: #222222;
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(255, 184, 184);
+  --card-radius: var(--chakra-radii-md);
+  --card-padding: var(--chakra-space-5);
+  --card-shadow: var(--chakra-shadows-base);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -120,21 +150,43 @@ main {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
-  font-family: var(--chakra-fonts-heading);
   line-height: 1.2;
   font-size: 19px;
   text-align: left;
-  font-weight: var(--chakra-fontWeights-bold);
+  text-transform: lowercase;
+  white-space: nowrap;
+  overflow: visible;
+  font-weight: bold;
+}
+
+.riesgo4 {
+  margin-bottom: 10px;
+  font-family: helvetica;
+  line-height: 1.2;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
   margin-right: var(--chakra-space-0-5);
   text-transform: lowercase;
   white-space: nowrap;
   overflow: visible;
+  display: flex; /* Already set, but included for clarity */
+  align-items: center;
+  justify-content: center; /* Centers horizontally */
 }
+
+.priceriesgo {
+  display: flex; /* Already set, but included for clarity */
+  align-items: center;
+  justify-content: center; /* Centers horizontally */
+
+}
+
 .price {
   display: flex;
-
   flex-direction: column;
   align-items: flex-start;
+  
 }
 .price strong {
   font-size: 1.1em;
@@ -155,6 +207,7 @@ main {
 
   color: #FF4D6D; /* Rojo */
 }
+
 .css-o8013y {
     font-family: var(--chakra-fonts-heading);
     line-height: 1.2;
@@ -200,7 +253,6 @@ main {
     background-color: var(--chakra-colors-black);
     outline-color: var(--chakra-colors-transparent);
     font-family: var(--chakra-fonts-saira);
-    font-weigth: bold;
     color: rgba(0, 150, 239, 0.6);
     width: 55px;
     margin-left: 0px;
@@ -227,7 +279,6 @@ main {
 ;
     gap: var(--chakra-space-1);
     grid-template-columns: 160px 1fr 160px;
-    height: 100%;
     max-width: 1180px;
     -webkit-box-align: start;
     align-items: start;
@@ -289,28 +340,6 @@ main {
     font-size: 11px;
 }
 
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 7px;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    width: 100%;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-}
-
 table {
   margin:auto;
   width:10em;
@@ -342,6 +371,7 @@ body {
   background-color: #333;
   font-family: "Quicksand", sans-serif;
   color: white;
+  
 }
 
 .b-a, .bar:after, .bar:before, .bar {
@@ -437,10 +467,29 @@ body {
 
 h1 {
   font-size: 3em;
+  font-feature-settings: "kern";
 }
 
 h3 {
-  color: #999;
+  color: #ffffff;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  line-height: 1.2;
+  font-size: 14px;
+  text-align: left;
+  font-weight: var(--chakra-fontWeights-bold);
+  text-transform: lowercase;
+}
+
+h15 {
+  color: #9e9e9e;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  line-height: 1.2;
+  font-size: 14px;
+  text-align: left;
+  font-weight: var(--chakra-fontWeights-bold);
+  text-transform: lowercase;
 }
 
 p {
@@ -453,15 +502,14 @@ tr:nth-child(odd) {
 }
 
 .increase .change, .increase .percentage {
-  color:green;
+  color:rgb(7, 242, 199);
 }
 
 .increase .change:before {
   content:"";
   display:inline-block;
-  float:right;
   border:0.3em solid transparent;
-  border-bottom:0.4em solid green;
+  border-bottom:0.4em solid rgb(7, 242, 199);
   position:relative;
   left:0.4em;
   top:0.2em;
@@ -470,14 +518,13 @@ tr:nth-child(odd) {
 .decrease .change:before {
   content:"";
   display:inline-block;
-  float:right;
   border:0.3em solid transparent;
-  border-top:0.4em solid red;
+  border-top:0.4em solid rgb(254, 77, 109);
   position:relative;
   left:0.4em;
   top:0.75em;
 }
 
 .decrease .change, .decrease .percentage {
-  color:red;
+  color:rgb(254, 77, 109);
 }
