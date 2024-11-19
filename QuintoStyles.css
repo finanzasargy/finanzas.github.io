@@ -528,3 +528,65 @@ tr:nth-child(odd) {
 .decrease .change, .decrease .percentage {
   color:rgb(254, 77, 109);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.increase2 .change2, .increase2 .percentage2 {
+  color:rgb(254, 77, 109);
+}
+
+.increase2 .change2:before2 {
+  content:"";
+  display:inline-block;
+  border:0.3em solid transparent;
+  border-bottom:0.4em solid rgb(254, 77, 109);
+  position:relative;
+  left:0.4em;
+  top:0.2em;
+}
+
+.decrease2 .change2.change2:before2 {
+  content:"";
+  display:inline-block;
+  border:0.3em solid transparent;
+  border-top:0.4em solid rgb(7, 242, 199);
+  position:relative;
+  left:0.4em;
+  top:0.75em;
+}
+
+.decrease2 .change2, .decrease2 .percentage2 {
+  color:rgb(254, 77, 109);
+}
+
+.status-indicator2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.status-indicator2.up2 {
+  background-color: #FF4D6D; /* Verde para alza */
+}
+.status-indicator2.down2 {
+  background-color: rgb(7 242 199); /* Rojo para baja */
+}
+.change2.up2 {
+  color: #FF4D6D; /* Verde */
+}
+.change2.down2 {
+
+  color: rgb(7 242 199); /* Rojo */
+}
