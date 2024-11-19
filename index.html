@@ -10,9 +10,9 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="QuintoStyles.css">
   <style>
     body {
+    font-family: -apple-system, Fira Sans, Helvetica, sans-serif;
       background-color: #161616;
       color: #ffffff;
-      font-family: slick, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -285,11 +285,12 @@
     <div class="css-dvxtzn"><a target="_blank" rel="noopener noreferrer" class="chakra-link css-1sojmgf" href="https://airtm-web.app.link/e/USVA-PayPal-FinanzasArgy"><img alt="imagen" src="https://i.postimg.cc/fL7tN3Ft/Finanzas-Argy-01-0.gif" class="chakra-image css-th88q6"></a></div>
     <div class="css-4qsayy">
       <div class="css-19l7epd">
-        
         <main class="dashboard" id="dashboard">
           </main>
       </div>
       <div class="css-1o3g8cs"><p class="chakra-text css-1scqrm2">Ultima actualización:</p><p class="chakra-text css-1fyayx3">18/11/2024 - 18:15hs (ARG)</p></div>
+        <main class="dashboard" id="riesgo">
+      </main>
     </div>
       <div class="css-dvxtzn"><a target="_blank" rel="noopener noreferrer" class="chakra-link css-1sojmgf" href="https://buenbit.onelink.me/A1PW/finanzasargy"><img alt="imagen" src="https://i.postimg.cc/nrvsM6ps/Finanzas-Argy-2.gif" class="chakra-image css-th88q6"></a><ins class="adsbygoogle vertical hidden" data-ad-client="ca-pub-4916962240247997" data-ad-slot="9112822975" data-full-width-responsive="true"></ins></div>
   </div>
@@ -297,7 +298,6 @@
   <script>
     // Datos simulados para el ticker de otras cotizaciones
     const tickerData = [
-      { name: 'Riesgo País', value: '7,04bps', change: '-8,24%', trend: 'down' },
       { name: 'Oro (EE.UU.)', value: '$1,945.60/oz', change: '-0.75%', trend: 'down' },
       { name: 'Petróleo (Brent)', value: '$85.20/bbl', change: '+1.10%', trend: 'up' },
       { name: 'Índice Nasdaq', value: '14,350.50 pts', change: '+0.45%', trend: 'up' },
@@ -309,10 +309,14 @@
       { name: 'Euro', sell: '25,05', buy: '24,90', change: '2.32%', time: '18/11/25 - 18:10', trend: 'up' },
     ];
 
+    const riesgos = [
+        { name: 'RIESGO PAÍS', sell: '7,04' , change: '-8,24%', time: '18/11/25 - 18:10', trend: 'down' },
+      ];
+
     const ticker = document.getElementById('ticker');
     const dashboard = document.getElementById('dashboard');
+    const riesgo = document.getElementById('riesgo');
 
-    // Función para crear el ticker de cotizaciones
     // Función para crear el ticker de cotizaciones
     tickerData.forEach(item => {
       const tickerItem = document.createElement('span');
@@ -351,6 +355,26 @@
 
       dashboard.appendChild(card);
     });
+        riesgos.forEach(riesgos => {
+        const card = document.createElement('div');
+        card.classList.add('riesgo-card');
+        card.innerHTML = `
+       <div class="header">
+            <h15>${riesgos.name}</h15>
+            <span class="status-indicator ${riesgos.trend === 'up' ? 'up' : (riesgos.trend === 'down' ? 'down' : 'neutral')}"></span>
+          </div>
+          <div class="riesgo4">
+            <div class="priceriesgo">
+              <span2>${riesgos.sell}</span2>
+            </div>
+          </div>
+          <div class="trend">
+            <span class="change ${riesgos.trend}">${riesgos.change}</span>
+            <span class="ultimavez">${riesgos.time}</ultimavez>
+          </div>
+        `;
+        riesgo.appendChild(card);
+      });
   </script>
 </body>
 
