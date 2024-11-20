@@ -1,8 +1,4 @@
 {
-  "x-api-key": "64d57b57a86d3227b097c31e",
-  "Content-Type": "application/json"
-},
-{
   "id": 1,
   "name": "Dólar",
   "sell": "30.00",
