@@ -304,77 +304,141 @@
       { name: 'Bitcoin', value: '$29,580', change: '-1.25%', trend: 'down' }
     ];
 
-    const currencies = [
-      { name: 'Dólar', sell: '28,44', buy: '28,20', change: '-3.38%', time: '20/11/25 - 17:38', trend: 'down' },
-      { name: 'Euro', sell: '22,40', buy: '22,40', change: '-2.84%', time: '20/11/25 - 17:38', trend: 'down' },
-    ];
-
-    const riesgos = [
-        { name: 'RIESGO PAÍS', sell: '12,57' , change: '20.04%', time: '20/11/25 - 17:20', trend: 'up2' },
+      const currencies = [
+          { name: 'Dólar', sell: '0.00', buy: '0.00', change: '0.00%', time: '00/00/00 - 00:00', trend: '' },
+          { name: 'Euro', sell: '0.00', buy: '0.00', change: '0.00%', time: '00/00/00 - 00:00', trend: '' },
       ];
 
-    const ticker = document.getElementById('ticker');
-    const dashboard = document.getElementById('dashboard');
-    const riesgo = document.getElementById('riesgo');
+      const riesgos = [
+          { name: 'RIESGO PAÍS', sell: '8,35' , change: '18,58%', time: '19/11/25 - 16:38', trend: 'up2' },
+      ];
 
-    // Función para crear el ticker de cotizaciones
-    tickerData.forEach(item => {
-      const tickerItem = document.createElement('span');
-      tickerItem.textContent = `${item.name}: ${item.value} | ${item.change}`;
-      tickerItem.classList.add('change');
-      tickerItem.classList.add(item.trend === 'up' ? 'up' : 'down');
-      ticker.appendChild(tickerItem);
-    });
+      const ticker = document.getElementById('ticker');
+      const dashboard = document.getElementById('dashboard');
+      const riesgo = document.getElementById('riesgo');
 
-    // Función para crear tarjetas de divisa
-    currencies.forEach(currency => {
-      const card = document.createElement('div');
-      card.classList.add('currency-card');
+      // Función para crear el ticker de cotizaciones
+      // Función para crear las tarjetas de divisa
+      currencies.forEach(currency => {
+          const card = document.createElement('div');
+          card.classList.add('currency-card'); // Añadimos la clase para el estilo
 
-      card.innerHTML = `
-     <div class="header">
-          <h3>${currency.name}</h3>
-          <span class="status-indicator ${currency.trend === 'up' ? 'up' : (currency.trend === 'down' ? 'down' : 'neutral')}"></span>
-        </div>
-        <div class="prices">
-          <div class="price">
-            <span>Venta</span>
-            <strong>$${currency.sell}</strong>
-          </div>
-          <p class="chakra-text css-artprq">/</p>
-          <div class="buy">
-            <span>Compra</span>
-            <strong>$${currency.buy}</strong>
-          </div>
-        </div>
-        <div class="trend">
-          <span class="change ${currency.trend}">${currency.change}</span>
-          <span class="ultimavez">${currency.time}</ultimavez>
-        </div>
-      `;
+          // Asignamos el HTML a la tarjeta
+          card.innerHTML = `
+              <div class="header">
+                  <h3>${currency.name}</h3>
+                  <span class="status-indicator ${currency.trend === 'up' ? 'up' : (currency.trend === 'down' ? 'down' : 'neutral')}"></span>
+              </div>
+              <div class="prices">
+                  <div class="price">
+                      <span>Venta</span>
+                      <strong>$${currency.sell}</strong> <!-- Aquí mostramos la cotización de venta -->
+                  </div>
+                  <p class="chakra-text css-artprq">/</p>
+                  <div class="buy">
+                      <span>Compra</span>
+                      <strong>$${currency.buy}</strong> <!-- Aquí mostramos la cotización de compra -->
+                  </div>
+              </div>
+              <div class="trend">
+                  <span class="change ${currency.trend}">${currency.change}</span> <!-- Mostrar el cambio -->
+                  <span class="ultimavez">${currency.time}</span> <!-- Mostrar la última actualización -->
+              </div>
+          `;
 
-      dashboard.appendChild(card);
-    });
-        riesgos.forEach(riesgos => {
-        const card = document.createElement('div');
-        card.classList.add('riesgo-card');
-        card.innerHTML = `
-       <div class="header">
-            <h15>${riesgos.name}</h15>
-            <span class="status-indicator2 ${riesgos.trend === 'up2' ? 'up2' : (riesgos.trend === 'down2' ? 'down2' : 'neutral')}"></span>
-          </div>
-          <div class="riesgo4">
-            <div class="priceriesgo">
-              <span2>${riesgos.sell}</span2>
-            </div>
-          </div>
-          <div class="trend">
-            <span class="change2 ${riesgos.trend}">${riesgos.change}</span>
-            <span class="ultimavez">${riesgos.time}</ultimavez>
-          </div>
-        `;
-        riesgo.appendChild(card);
+          // Añadimos la tarjeta al contenedor de monedas
+          dashboard.appendChild(card);
       });
+
+      riesgos.forEach(riesgoItem => {
+          const card = document.createElement('div');
+          card.classList.add('riesgo-card');
+          card.innerHTML = `
+              <div class="header">
+                  <h15>${riesgoItem.name}</h15>
+                  <span class="status-indicator2 ${riesgoItem.trend === 'up2' ? 'up2' : (riesgoItem.trend === 'down2' ? 'down2' : 'neutral')}"></span>
+              </div>
+              <div class="riesgo4">
+                  <div class="priceriesgo">
+                      <span2>${riesgoItem.sell}</span2>
+                  </div>
+              </div>
+              <div class="trend">
+                  <span class="change2 ${riesgoItem.trend}">${riesgoItem.change}</span>
+                  <span class="ultimavez">${riesgoItem.time}</span>
+              </div>
+          `;
+          riesgo.appendChild(card);
+      });
+
+      // Función para actualizar las cotizaciones
+      async function updateCurrencies() {
+          const apiUrl = 'https://v6.exchangerate-api.com/v6/64d57b57a86d3227b097c31e/latest/TUN'; // Cambia por tu clave de API
+
+          try {
+              const response = await fetch(apiUrl);
+              const data = await response.json();
+
+              // Actualizar las cotizaciones para cada moneda
+              currencies[0].sell = (data.conversion_rates.USD * 1.02).toFixed(2); // Ejemplo: cotización de venta (con un incremento de 2%)
+              currencies[0].buy = data.conversion_rates.USD.toFixed(2); // Ejemplo: cotización de compra
+              currencies[0].time = new Date().toLocaleString(); // Hora de última actualización
+              currencies[0].trend = currencies[0].sell > currencies[0].buy ? 'up' : 'down'; // Lógica para la tendencia
+
+              currencies[1].sell = (data.conversion_rates.EUR * 1.02).toFixed(2);
+              currencies[1].buy = data.conversion_rates.EUR.toFixed(2);
+              currencies[1].time = new Date().toLocaleString();
+              currencies[1].trend = currencies[1].sell > currencies[1].buy ? 'up' : 'down';
+
+              console.log(currencies); // Para verificar si los datos se actualizan correctamente
+
+              // Llamamos a la función para re-renderizar las tarjetas
+              renderCurrencies();
+          } catch (error) {
+              console.error('Error al actualizar las cotizaciones:', error);
+          }
+      }
+
+      // Función para renderizar las tarjetas con las cotizaciones actualizadas
+      function renderCurrencies() {
+          // Limpiar las tarjetas anteriores
+          dashboard.innerHTML = '';
+
+          // Crear las nuevas tarjetas con los datos actualizados
+          currencies.forEach(currency => {
+              const card = document.createElement('div');
+              card.classList.add('currency-card'); // Añadir la clase para el estilo
+
+              // Asignamos el HTML actualizado
+              card.innerHTML = `
+                  <div class="header">
+                      <h3>${currency.name}</h3>
+                      <span class="status-indicator ${currency.trend === 'up' ? 'up' : (currency.trend === 'down' ? 'down' : 'neutral')}"></span>
+                  </div>
+                  <div class="prices">
+                      <div class="price">
+                          <span>Venta</span>
+                          <strong>$${currency.sell}</strong> <!-- Actualización de la cotización de venta -->
+                      </div>
+                      <p class="chakra-text css-artprq">/</p>
+                      <div class="buy">
+                          <span>Compra</span>
+                          <strong>$${currency.buy}</strong> <!-- Actualización de la cotización de compra -->
+                      </div>
+                  </div>
+                  <div class="trend">
+                      <span class="change ${currency.trend}">${currency.change}</span>
+                      <span class="ultimavez">${currency.time}</span> <!-- Hora de la última actualización -->
+                  </div>
+              `;
+
+              // Añadir la nueva tarjeta al contenedor
+              dashboard.appendChild(card);
+          });
+      }
+
+      // Llamar a la función para actualizar las cotizaciones al cargar la página
+      updateCurrencies();
   </script>
 </body>
   <script>
