@@ -374,22 +374,32 @@
       async function updateCurrencies() {
           const apiUrl = 'https://apimocha.com/cotitunia/post'; // Cambia por tu clave de API
 
+          
+
           try {
               const response = await fetch(apiUrl);
               const data = await response.json();
 
-              // Actualizar las cotizaciones para cada moneda
-              currencies[0].sell = (data.conversion_rates.USDTU * 1.02).toFixed(2); // Ejemplo: cotización de venta (con un incremento de 2%)
-              currencies[0].buy = data.conversion_rates.USDTU.toFixed(2); // Ejemplo: cotización de compra
-              currencies[0].time = new Date().toLocaleString(); // Hora de última actualización
-              currencies[0].change = data.change.USDCHANGE.toFixed(2);
-              currencies[0].trend = data.trend.USDTREND
+                // Obtener la tasa previa desde la API
+                const previousRateEUR = parseFloat(data.previus.EUR.toFixed(2));
+                const previousRateUSD = parseFloat(data.previus.USDTU.toFixed(2));
 
-              currencies[1].sell = (data.conversion_rates.EUR * 1.02).toFixed(2);
-              currencies[1].buy = data.conversion_rates.EUR.toFixed(2);
-              currencies[1].time = new Date().toLocaleString();
-              currencies[1].change = data.change.EURCHANGE.toFixed(2);
-              currencies[1].trend = data.trend.EURTREND
+                // Obtener la nueva tasa desde la API
+                const currentRateEUR = parseFloat(data.conversion_rates.EUR.toFixed(2));
+                const currentRateUSD = parseFloat(data.conversion_rates.USDTU.toFixed(2));
+
+              // Actualizar las cotizaciones para cada moneda
+              currencies[0].sell = data.conversion_rates.USDTU.toFixed(2); // Ejemplo: cotización de venta (con un incremento de 2%)
+              currencies[0].buy = (data.conversion_rates.USDTU * 0.90).toFixed(2); // Ejemplo: cotización de compra
+              currencies[0].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
+              currencies[0].change =  (previousRateUSD - currentRateUSD).toFixed(2);
+              currencies[0].trend = currentRateUSD > previousRateUSD ? 'up' : (currentRateUSD < previousRateUSD ? 'down' : 'neutral');
+
+              currencies[1].sell = data.conversion_rates.EUR.toFixed(2);
+              currencies[1].buy = (data.conversion_rates.EUR * 0.90).toFixed(2);
+              currencies[1].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
+              currencies[1].change = (previousRateEUR - currentRateEUR).toFixed(2); // Calcula el cambio
+              currencies[1].trend = currentRateEUR > previousRateEUR ? 'up' : (currentRateEUR < previousRateEUR ? 'down' : 'neutral');
 
               console.log(currencies); // Para verificar si los datos se actualizan correctamente
 
@@ -428,7 +438,9 @@
                       </div>
                   </div>
                   <div class="trend">
-                      <span class="change ${currency.trend}">${currency.change}</span>
+                      <span class="change ${currency.trend}">
+                          ${currency.trend === 'up' ? '↑' : (currency.trend === 'down' ? '↓' : '↔')} 
+                          ${currency.change}</span>
                       <span class="ultimavez">${currency.time}</span> <!-- Hora de la última actualización -->
                   </div>
               `;
@@ -439,6 +451,7 @@
       }
 
 // RISEGO
+      // Valores previos de las tasas iniciales
 
       async function updateRiesgo() {
           const apiUrl = 'https://apimocha.com/cotitunia/post'; // Cambia por tu clave de API
@@ -447,52 +460,60 @@
               const response = await fetch(apiUrl);
               const data = await response.json();
 
-              // Actualizar las cotizaciones para riesgo
-              riesgos[0].sell = data.conversion_rates.RIE.toFixed(2);
-              riesgos[0].time = new Date().toLocaleString(); // Hora de última actualización
-              riesgos[0].change = data.change.RIECHANGE.toFixed(2);
-              riesgos[0].trend = data.trend.RIETREND;
+              // Obtener la tasa previa desde la API
+              const previousRate = parseFloat(data.previus.RIEPREVIUS.toFixed(2));
+
+              // Obtener la nueva tasa desde la API
+              const currentRate = parseFloat(data.conversion_rates.RIE.toFixed(2));
+
+              // Actualizar la información de riesgo
+              riesgos[0].sell = currentRate; // Nueva cotización
+              riesgos[0].time = new Date(data.time_last_update_RIE_unix * 1000).toLocaleString(); // Última actualización
+              riesgos[0].change = (currentRate - previousRate).toFixed(2); // Calcula el cambio
+              riesgos[0].trend = currentRate > previousRate ? 'up2' : (currentRate < previousRate ? 'down2' : 'neutral'); // Define la tendencia
 
               console.log(riesgos); // Para verificar si los datos se actualizan correctamente
 
-              // Llamamos a la función para re-renderizar las tarjetas
+              // Llamar a la función para re-renderizar las tarjetas
               renderRiesgo();
           } catch (error) {
               console.error('Error al actualizar las cotizaciones:', error);
           }
       }
 
-        // Función para renderizar las tarjetas con las cotizaciones actualizadas
-        function renderRiesgo() {
-            // Limpiar las tarjetas anteriores
-                riesgo.innerHTML = '';
+      // Función para renderizar las tarjetas con las cotizaciones actualizadas
+      function renderRiesgo() {
+          // Limpiar las tarjetas anteriores
+          riesgo.innerHTML = '';
 
-            // Crear las nuevas tarjetas con los datos actualizados
-                riesgos.forEach(riesgoItem => {
-                  const card = document.createElement('div');
-                  card.classList.add('riesgo-card');
-                  card.innerHTML = `
-                      <div class="header">
-                          <h15>${riesgoItem.name}</h15>
-                          <span class="status-indicator2 ${riesgoItem.trend === 'up2' ? 'up2' : (riesgoItem.trend === 'down2' ? 'down2' : 'neutral')}"></span>
+          // Crear las nuevas tarjetas con los datos actualizados
+          riesgos.forEach(riesgoItem => {
+              const card = document.createElement('div');
+              card.classList.add('riesgo-card');
+              card.innerHTML = `
+                  <div class="header">
+                      <h15>${riesgoItem.name}</h15>
+                      <span class="status-indicator2 ${riesgoItem.trend}"></span>
+                  </div>
+                  <div class="riesgo4">
+                      <div class="priceriesgo">
+                          <span2>${riesgoItem.sell}</span2>
                       </div>
-                      <div class="riesgo4">
-                          <div class="priceriesgo">
-                              <span2>${riesgoItem.sell}</span2>
-                          </div>
-                      </div>
-                      <div class="trend">
-                          <span class="change2 ${riesgoItem.trend}">${riesgoItem.change}</span>
-                          <span class="ultimavez">${riesgoItem.time}</span>
-                      </div>
-                  `;
-                  riesgo.appendChild(card);
-            });
-        }
-
+                  </div>
+                  <div class="trend">
+                      <span class="change2 ${riesgoItem.trend}">
+                          ${riesgoItem.trend === 'up2' ? '↑' : (riesgoItem.trend === 'down2' ? '↓' : '↔')} 
+                          ${riesgoItem.change}
+                      </span>
+                      <span class="ultimavez">${riesgoItem.time}</span>
+                  </div>
+              `;
+              riesgo.appendChild(card);
+          });
+      }
 
       // Llamar a la función para actualizar las cotizaciones al cargar la página
-      updateRiesgo()
+      updateRiesgo();
       updateCurrencies();
   </script>
 </body>
