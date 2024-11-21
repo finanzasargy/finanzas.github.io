@@ -392,13 +392,13 @@
               currencies[0].sell = data.conversion_rates.USDTU.toFixed(2); // Ejemplo: cotización de venta (con un incremento de 2%)
               currencies[0].buy = (data.conversion_rates.USDTU * 0.90).toFixed(2); // Ejemplo: cotización de compra
               currencies[0].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
-              currencies[0].change =  (previousRateUSD - currentRateUSD).toFixed(2);
+              currencies[0].change =  (currentRateUSD - previousRateUSD).toFixed(2);
               currencies[0].trend = currentRateUSD > previousRateUSD ? 'up' : (currentRateUSD < previousRateUSD ? 'down' : 'neutral');
 
               currencies[1].sell = data.conversion_rates.EUR.toFixed(2);
               currencies[1].buy = (data.conversion_rates.EUR * 0.90).toFixed(2);
               currencies[1].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
-              currencies[1].change = (previousRateEUR - currentRateEUR).toFixed(2); // Calcula el cambio
+              currencies[1].change = (currentRateEUR - previousRateEUR).toFixed(2); // Calcula el cambio
               currencies[1].trend = currentRateEUR > previousRateEUR ? 'up' : (currentRateEUR < previousRateEUR ? 'down' : 'neutral');
 
               console.log(currencies); // Para verificar si los datos se actualizan correctamente
