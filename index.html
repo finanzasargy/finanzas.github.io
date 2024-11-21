@@ -381,25 +381,26 @@
               const data = await response.json();
 
                 // Obtener la tasa previa desde la API
-                const previousRateEUR = parseFloat(data.previus.EUR.toFixed(2));
-                const previousRateUSD = parseFloat(data.previus.USDTU.toFixed(2));
+              const prev1RateEUR = parseFloat(data.previous.EUR.toFixed(2)); // Cambio de previus a previous
+              const prev1RateUSD = parseFloat(data.previous.USDTU1.toFixed(2)); // Cambio de previus a previous
+
 
                 // Obtener la nueva tasa desde la API
-                const currentRateEUR = parseFloat(data.conversion_rates.EUR.toFixed(2));
-                const currentRateUSD = parseFloat(data.conversion_rates.USDTU.toFixed(2));
+                const cur2RateEUR = parseFloat(data.conversion_rates.EUR.toFixed(2));
+                const cur2RateUSD = parseFloat(data.conversion_rates.USDTU.toFixed(2));
 
               // Actualizar las cotizaciones para cada moneda
               currencies[0].sell = data.conversion_rates.USDTU.toFixed(2); // Ejemplo: cotización de venta (con un incremento de 2%)
               currencies[0].buy = (data.conversion_rates.USDTU * 0.90).toFixed(2); // Ejemplo: cotización de compra
               currencies[0].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
-              currencies[0].change =  (currentRateUSD - previousRateUSD).toFixed(2);
-              currencies[0].trend = currentRateUSD > previousRateUSD ? 'up' : (currentRateUSD < previousRateUSD ? 'down' : 'neutral');
+              currencies[0].change =  (cur2RateUSD - prev1RateUSD).toFixed(2);
+              currencies[0].trend = cur2RateUSD > prev1RateUSD ? 'up' : (cur2RateUSD < prev1RateUSD ? 'down' : 'neutral');
 
               currencies[1].sell = data.conversion_rates.EUR.toFixed(2);
               currencies[1].buy = (data.conversion_rates.EUR * 0.90).toFixed(2);
               currencies[1].time = new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
-              currencies[1].change = (currentRateEUR - previousRateEUR).toFixed(2); // Calcula el cambio
-              currencies[1].trend = currentRateEUR > previousRateEUR ? 'up' : (currentRateEUR < previousRateEUR ? 'down' : 'neutral');
+              currencies[1].change = (cur2RateEUR - prev1RateEUR).toFixed(2); // Calcula el cambio
+              currencies[1].trend = cur2RateEUR > prev1RateEUR ? 'up' : (cur2RateEUR < prev1RateEUR ? 'down' : 'neutral');
 
               console.log(currencies); // Para verificar si los datos se actualizan correctamente
 
@@ -408,6 +409,7 @@
           } catch (error) {
               console.error('Error al actualizar las cotizaciones:', error);
           }
+          
       }
 
       // Función para renderizar las tarjetas con las cotizaciones actualizadas
@@ -461,23 +463,23 @@
               const data = await response.json();
 
               // Obtener la tasa previa desde la API
-              const previousRate = parseFloat(data.previus.RIEPREVIUS.toFixed(2));
+              const previous4Rate = parseFloat(data.previous.RIEPREVIUS.toFixed(2));
 
               // Obtener la nueva tasa desde la API
-              const currentRate = parseFloat(data.conversion_rates.RIE.toFixed(2));
+              const current4Rate = parseFloat(data.conversion_rates.RIE.toFixed(2));
 
               // Actualizar la información de riesgo
-              riesgos[0].sell = currentRate; // Nueva cotización
-              riesgos[0].time = new Date(data.time_last_update_RIE_unix * 1000).toLocaleString(); // Última actualización
-              riesgos[0].change = (currentRate - previousRate).toFixed(2); // Calcula el cambio
-              riesgos[0].trend = currentRate > previousRate ? 'up2' : (currentRate < previousRate ? 'down2' : 'neutral'); // Define la tendencia
+              riesgos[0].sell = current4Rate; // Nueva cotización
+              riesgos[0].time =  new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
+              riesgos[0].change = (current4Rate - previous4Rate).toFixed(2); // Calcula el cambio
+              riesgos[0].trend = current4Rate > previous4Rate ? 'up2' : (current4Rate < previous4Rate ? 'down2' : 'neutral'); // Define la tendencia
 
               console.log(riesgos); // Para verificar si los datos se actualizan correctamente
 
               // Llamar a la función para re-renderizar las tarjetas
               renderRiesgo();
           } catch (error) {
-              console.error('Error al actualizar las cotizaciones:', error);
+              console.error('Error al actualizar el Riesgo Pais:', error)
           }
       }
 
@@ -513,8 +515,8 @@
       }
 
       // Llamar a la función para actualizar las cotizaciones al cargar la página
-      updateRiesgo();
-      updateCurrencies();
+      updateRiesgo()
+      updateCurrencies()
   </script>
 </body>
   <script>
