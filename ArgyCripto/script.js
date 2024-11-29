@@ -132,4 +132,3 @@ function displayCurrentDate() {
 
 // Actualizar datos automáticamente cada 30 segundos
 fetchMarketData(); // Cargar los datos inicialmente
-setInterval(fetchMarketData, 30000);
