@@ -113,6 +113,27 @@ main {
   --card-shadow: var(--chakra-shadows-base);
 }
 
+.css-bielb8 {
+    margin-right: 4px;
+    border-radius: 90%;
+    width: 15px;
+    height: 15px;
+}
+
+.cripto-card-argy {
+  height: 149px;
+  margin: 0px;
+  background-color: #222222;
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(149 82 255);;
+  --card-radius: var(--chakra-radii-md);
+  --card-padding: var(--chakra-space-5);
+  --card-shadow: var(--chakra-shadows-base);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -186,7 +207,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
 }
 .price strong {
   font-size: 1.1em;
@@ -371,7 +392,7 @@ body {
   background-color: #333;
   font-family: "Quicksand", sans-serif;
   color: white;
-  
+
 }
 
 .b-a, .bar:after, .bar:before, .bar {
