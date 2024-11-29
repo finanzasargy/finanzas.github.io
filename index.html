@@ -288,13 +288,13 @@
           </main>
       </div>
       <div class="css-1o3g8cs"><p class="chakra-text css-1scqrm2">Ultima actualización: </p><p class="chakra-text css-1fyayx3"><script>document.write(new Date().toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: 'numeric' }) + " - " + new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }));</script></p></div>
-        
+
         <main class="dashboard" id="riesgo">
       </main>
     </div>
       <div class="css-dvxtzn"><a target="_blank" rel="noopener noreferrer" class="chakra-link css-1sojmgf" href="https://discord.gg/VK7maj2aFe"><img alt="imagen" src="https://i.postimg.cc/nrvsM6ps/Finanzas-Argy-2.gif" class="chakra-image css-th88q6"></a><ins class="adsbygoogle vertical hidden" data-ad-client="ca-pub-4916962240247997" data-ad-slot="9112822975" data-full-width-responsive="true"></ins></div>
   </div>
-  
+
   <script>
     // Datos simulados para el ticker de otras cotizaciones
     const tickerData = [
@@ -313,9 +313,14 @@
           { name: 'RIESGO PAÍS', sell: '0.00' , change: '0.00%', time: '00/00/00 - 00:00', trend: '' },
       ];
 
+      const criptoscoins = [
+            { name: 'ArgyCripto', sell: '0.00' , change: '0.00%', time: '00/00/00 - 00:00', trend: '' },
+        ];
+
       const ticker = document.getElementById('ticker');
       const dashboard = document.getElementById('dashboard');
       const riesgo = document.getElementById('riesgo');
+      const cripto = document.getElementById('riesgo');
 
       // Función para crear el ticker de cotizaciones
       currencies.forEach(currency => {
@@ -370,11 +375,32 @@
           riesgo.appendChild(card);
       });
 
+        criptoscoins.forEach(riesgoItem => {
+            const card = document.createElement('div');
+            card.classList.add('cripto-card-argy');
+            card.innerHTML = `
+                <div class="header">
+                    <h15>${criptoscoins.name}</h15>
+                    <span class="status-indicator2 ${criptoscoins.trend === 'up2' ? 'up2' : (criptoscoins.trend === 'down2' ? 'down2' : 'neutral')}"></span>
+                </div>
+                <div class="riesgo4">
+                    <div class="priceriesgo">
+                        <span2>${criptoscoins.sell}</span2>
+                    </div>
+                </div>
+                <div class="trend">
+                    <span class="change2 ${criptoscoins.trend}">${criptoscoins.change}</span>
+                    <span class="ultimavez">${criptoscoins.time}</span>
+                </div>
+            `;
+              cripto.appendChild(card);
+        });
+
       // Función para actualizar las cotizaciones
       async function updateCurrencies() {
-          const apiUrl = 'https://apimocha.com/cotitunia/post'; // Cambia por tu clave de API
+          const apiUrl = 'https://apimocha.com/cotization/cotizacion'; // Cambia por tu clave de API
 
-          
+
 
           try {
               const response = await fetch(apiUrl);
@@ -409,7 +435,7 @@
           } catch (error) {
               console.error('Error al actualizar las cotizaciones:', error);
           }
-          
+
       }
 
       // Función para renderizar las tarjetas con las cotizaciones actualizadas
@@ -456,7 +482,7 @@
       // Valores previos de las tasas iniciales
 
       async function updateRiesgo() {
-          const apiUrl = 'https://apimocha.com/cotitunia/post'; // Cambia por tu clave de API
+          const apiUrl = 'https://apimocha.com/cotization/cotizacion'; // Cambia por tu clave de API
 
           try {
               const response = await fetch(apiUrl);
@@ -464,9 +490,8 @@
 
               // Obtener la tasa previa desde la API
               const previous4Rate = parseFloat(data.previous.RIEPREVIUS.toFixed(2));
-
-              // Obtener la nueva tasa desde la API
               const current4Rate = parseFloat(data.conversion_rates.RIE.toFixed(2));
+
 
               // Actualizar la información de riesgo
               riesgos[0].sell = current4Rate; // Nueva cotización
@@ -514,13 +539,84 @@
           });
       }
 
+
+
+      async function updateCripto() {
+            const apiUrlCriptos = 'https://apimocha.com/cotization/cripto-argy'; // Cambia por tu clave de API
+            const apiUrl = 'https://apimocha.com/cotization/cotizacion'; // Cambia por tu clave de API
+          
+
+            try {
+                const responseCriptos = await fetch(apiUrlCriptos);
+                const dataCriptos = await responseCriptos.json();
+
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                const lastEntry = dataCriptos[dataCriptos.length - 1];
+                const secondLastEntry = dataCriptos[dataCriptos.length - 2];
+
+                // Obtener la tasa previa desde la API
+
+                const previouscripto = parseFloat(secondLastEntry.close); // Penúltimo precio
+                const currentcripto = parseFloat(lastEntry.close); // Último precio
+
+                // Actualizar la información de riesgo
+                criptoscoins[0].sell = currentcripto; // Nueva cotización
+                criptoscoins[0].time =  new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
+                criptoscoins[0].change = ((currentcripto - previouscripto) / previouscripto * 100).toFixed(2); // Variación en porcentaje
+                criptoscoins[0].trend = currentcripto > previouscripto ? 'up2' : (currentcripto < previouscripto ? 'down2' : 'neutral'); // Define la tendencia
+
+                console.log(criptoscoins); // Para verificar si los datos se actualizan correctamente
+
+                // Llamar a la función para re-renderizar las tarjetas
+                renderCripto();
+            } catch (error) {
+                console.error('Error al actualizar CriptoCoins:', error)
+            }
+        }
+
+        // Función para renderizar las tarjetas con las cotizaciones actualizadas
+        function renderCripto() {
+
+            // Crear las nuevas tarjetas con los datos actualizados
+            criptoscoins.forEach(riesgoItem => {
+                const card = document.createElement('div');
+                card.classList.add('cripto-card-argy');
+                card.innerHTML = `
+                    <div class="header">
+                    <img alt="Cotización Dólar Letsbit" src="https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png" class="chakra-image css-bielb8">
+                        <h15>${riesgoItem.name}</h15>
+                        <span class="status-indicator2 ${riesgoItem.trend}"></span>
+                    </div>
+                    <div class="riesgo4">
+                        <div class="priceriesgo">
+                            <span2> $${riesgoItem.sell}</span2>
+                        </div>
+                    </div>
+                    <div class="trend">
+                        <span class="change2 ${riesgoItem.trend}">
+                            ${riesgoItem.trend === 'up2' ? '↑' : (riesgoItem.trend === 'down2' ? '↓' : '↔')} 
+                            ${riesgoItem.change}
+                        </span>
+                        <span class="ultimavez">${riesgoItem.time}</span>
+                    </div>
+                `;
+                riesgo.appendChild(card);
+            });
+        }
+
+
+      
+
       // Llamar a la función para actualizar las cotizaciones al cargar la página
       updateRiesgo()
+      updateCripto()
       updateCurrencies()
   </script>
 </body>
   <script>
   </script>
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="Quinto.js"></script>
-    
+
 </html>
