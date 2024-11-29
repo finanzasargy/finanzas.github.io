@@ -4,10 +4,12 @@ const cryptoName = document.getElementById('crypto-name');
 const cryptoLogo = document.getElementById('crypto-logo');
 const dateElement = document.getElementById('date');
 
+
 // Configura el nombre y el logo dinámicamente
 const cryptoDetails = {
-    name: 'Bitcoin (BTC)',
-    logo: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=023', // URL del logo
+    name: 'ArgyCoin (AYC)',
+    logo: 'https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png', // URL del logo
+    href: "https://finanzasargy.github.io/finanzas.github.io/index.html"
 };
 
 cryptoName.textContent = cryptoDetails.name;
@@ -126,6 +128,7 @@ function displayCurrentDate() {
     };
     dateElement.textContent = today.toLocaleDateString('es-ES', options);
 }
+
 
 // Actualizar datos automáticamente cada 30 segundos
 fetchMarketData(); // Cargar los datos inicialmente
