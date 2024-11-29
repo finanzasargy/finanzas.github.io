@@ -9,7 +9,7 @@ const cryptocurrencies = [
     volume: "", // Este valor se actualizará con la API
     lastPurchase: "", // Este valor también se actualizará con la API
     variation: "", // Este valor se actualizará con el cálculo
-    url: "https://eda6733d-8c9e-4404-a017-3ac0baf220e5-00-3p6b059op2ftm.janeway.replit.dev/ArgyCripto/ArgyCotizacion.html" // URL de la página de ArgyCoin
+    url: "https://finanzasargy.github.io/finanzas.github.io/ArgyCripto/ArgyCotizacion.html" // URL de la página de ArgyCoin
   },
   // Puedes agregar más criptomonedas aquí si es necesario
 ];
