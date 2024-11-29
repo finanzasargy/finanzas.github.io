@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico Financiero con API</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #2b2b2b;
+            width: 100%;
+        }
+
+        #header img {
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        #date {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        #chart-container {
+            width: 90%;
+            height: 70vh;
+            margin-top: 10px;
+        }
+
+        #info-box {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2b2b2b;
+            border-radius: 5px;
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img id="crypto-logo" src="" alt="Crypto Logo">
+        <h1 id="crypto-name"></h1>
+        <div id="date"></div>
+    </div>
+    <div id="chart-container"></div>
+    <div id="info-box">Cargando datos...</div>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
