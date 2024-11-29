@@ -375,22 +375,22 @@
           riesgo.appendChild(card);
       });
 
-        criptoscoins.forEach(riesgoItem => {
+        criptoscoins.forEach(CriptoItem => {
             const card = document.createElement('div');
             card.classList.add('cripto-card-argy');
             card.innerHTML = `
                 <div class="header">
-                    <h15>${criptoscoins.name}</h15>
-                    <span class="status-indicator2 ${criptoscoins.trend === 'up2' ? 'up2' : (criptoscoins.trend === 'down2' ? 'down2' : 'neutral')}"></span>
+                    <h15>${CriptoItem.name}</h15>
+                    <span class="status-indicator2 ${CriptoItem.trend === 'up' ? 'up' : (CriptoItem.trend === 'down' ? 'down' : 'neutral')}"></span>
                 </div>
                 <div class="riesgo4">
                     <div class="priceriesgo">
-                        <span2>${criptoscoins.sell}</span2>
+                        <span2>${CriptoItem.sell}</span2>
                     </div>
                 </div>
                 <div class="trend">
-                    <span class="change2 ${criptoscoins.trend}">${criptoscoins.change}</span>
-                    <span class="ultimavez">${criptoscoins.time}</span>
+                    <span class="change2 ${CriptoItem.trend}">${CriptoItem.change}</span>
+                    <span class="ultimavez">${CriptoItem.time}</span>
                 </div>
             `;
               cripto.appendChild(card);
@@ -564,8 +564,8 @@
                 // Actualizar la información de riesgo
                 criptoscoins[0].sell = currentcripto; // Nueva cotización
                 criptoscoins[0].time =  new Date(data.time_last_update_unix * 1000).toLocaleString(); // Última actualización
-                criptoscoins[0].change = ((currentcripto - previouscripto) / previouscripto * 100).toFixed(2); // Variación en porcentaje
-                criptoscoins[0].trend = currentcripto > previouscripto ? 'up2' : (currentcripto < previouscripto ? 'down2' : 'neutral'); // Define la tendencia
+                criptoscoins[0].change = ((currentcripto - previouscripto) / previouscripto * 100 / 100).toFixed(2); // Variación en porcentaje
+                criptoscoins[0].trend = currentcripto > previouscripto ? 'up' : (currentcripto < previouscripto ? 'down' : 'neutral'); // Define la tendencia
 
                 console.log(criptoscoins); // Para verificar si los datos se actualizan correctamente
 
@@ -587,7 +587,7 @@
                     <div class="header">
                     <img alt="Cotización Dólar Letsbit" src="https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png" class="chakra-image css-bielb8">
                         <h15>${riesgoItem.name}</h15>
-                        <span class="status-indicator2 ${riesgoItem.trend}"></span>
+                        <span class="status-indicator ${riesgoItem.trend}"></span>
                     </div>
                     <div class="riesgo4">
                         <div class="priceriesgo">
@@ -595,8 +595,8 @@
                         </div>
                     </div>
                     <div class="trend">
-                        <span class="change2 ${riesgoItem.trend}">
-                            ${riesgoItem.trend === 'up2' ? '↑' : (riesgoItem.trend === 'down2' ? '↓' : '↔')} 
+                        <span class="change ${riesgoItem.trend}">
+                            ${riesgoItem.trend === 'up' ? '↑' : (riesgoItem.trend === 'down' ? '↓' : '↔')} 
                             ${riesgoItem.change}
                         </span>
                         <span class="ultimavez">${riesgoItem.time}</span>
