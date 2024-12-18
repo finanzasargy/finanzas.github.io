@@ -39,7 +39,7 @@ const localData = [
     { time: "2024-12-07 00:15:00", open: 34.50, high: 33.90, low: 33.10, close: 33.50, volume: 0.0},
     { time: "2024-12-08 00:15:00", open: 33.50, high: 33.80, low: 33.20, close: 33.50, volume: 0.0},
     { time: "2024-12-09 00:15:00", open: 33.50, high: 31.70, low: 31.30, close: 31.50, volume: 0.0},
-    { time: "2024-12-11 00:15:00", open: 33.50, high: 29.00, low: 28.40, close: 28.50, volume: 0.0},
+    { time: "2024-12-11 00:15:00", open: 31.50, high: 29.00, low: 28.40, close: 28.50, volume: 0.0},
     { time: "2024-12-12 00:15:00", open: 28.50, high: 31.25, low: 30.90, close: 31.15, volume: 0.0},
     { time: "2024-12-13 00:15:00", open: 31.15, high: 31.50, low: 30.90, close: 31.20, volume: 0.0},
     { time: "2024-12-14 00:15:00", open: 31.20, high: 31.10, low: 30.80, close: 30.95, volume: 0.0},
