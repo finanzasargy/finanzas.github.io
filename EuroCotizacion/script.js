@@ -46,7 +46,8 @@ const localData = [
     { time: "2024-12-17 18:12:00", open: 25.50, high: 26.05, low: 25.90, close: 26.00, volume: 0.0 },
     { time: "2024-12-18 17:58:00", open: 25.50, high: 26.90, low: 27.20, close: 27.10, volume: 0.0 },
     { time: "2024-12-19 18:28:00", open: 27.10, high: 30.00, low: 27.15, close: 28.60, volume: 0.0 },
-    { time: "2024-12-20 18:01:00", open: 28.60, high: 30.00, low: 28.65, close: 29.90, volume: 0.0 }
+    { time: "2024-12-20 18:01:00", open: 28.60, high: 30.00, low: 28.65, close: 29.90, volume: 0.0 },
+    { time: "2024-12-21 18:02:00", open: 29.90, high: 31.15, low: 29.90, close: 30.90, volume: 0.0 }
 ];
 
 // Crear el gráfico
