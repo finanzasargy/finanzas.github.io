@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="https://pbs.twimg.com/profile_images/1628520220544335883/Y_USf6LP_400x400.png">
+    <title>Dólar Blue - ARGANIA</title>
+
+    <!-- Cargar Lightweight Charts correctamente -->
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.0.0/dist/lightweight-charts.standalone.production.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        #chartContainer {
+            width: 90%;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #444;
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📊 Cotización en Vivo</h2>
+    <div id="chartContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            try {
+                // Verificar si LightweightCharts está cargado
+                console.log("LightweightCharts:", LightweightCharts);
+
+                if (typeof LightweightCharts === "undefined") {
+                    throw new Error("Error: LightweightCharts no se ha cargado correctamente.");
+                }
+
+                // Crear gráfico
+                const chartContainer = document.getElementById('chartContainer');
+                const chart = LightweightCharts.createChart(chartContainer, {
+                    width: chartContainer.clientWidth,
+                    height: 500,
+                    layout: {
+                        backgroundColor: '#1e1e1e',
+                        textColor: 'white',
+                    },
+                    grid: {
+                        vertLines: { color: '#444' },
+                        horzLines: { color: '#444' },
+                    },
+                    timeScale: {
+                        timeVisible: true,
+                        secondsVisible: false,
+                    }
+                });
+
+                console.log(chart); // Verificar si el objeto se crea correctamente
+
+                // Agregar la serie de velas japonesas
+                const candleSeries = chart.addCandlestickSeries();
+
+                // Datos de prueba
+                const data = [
+                    { time: '2025-05-09', open: 320, high: 484.10, low: 400, close: 484.10 },
+                    { time: '2025-05-10', open: 484.10, high: 510, low: 390, close: 510 }
+                    
+
+                ];
+
+                candleSeries.setData(data);
+
+                // Ajustar tamaño al cambiar la ventana
+                window.addEventListener('resize', () => {
+                    chart.resize(chartContainer.clientWidth, 500);
+                });
+
+            } catch (error) {
+                console.error("Error al crear el gráfico:", error);
+            }
+        });
+    </script>
+
+</body>
+</html>
