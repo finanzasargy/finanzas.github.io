@@ -3,72 +3,69 @@
 document.addEventListener("DOMContentLoaded", () => {
   const data = {
     resumenDiario: {
-      cambioOficial: "$36,23",
-      cambioBlue: "$45",
+      cambioOficial: "$26,30",
+      cambioBlue: "$30",
       inflacion: {
-        diaria: "1.2%",
-        mensual: "8.4%",
-        anual: "112%"
+        diaria: "1.41%",
+        mensual: "9.14%",
+        anual: "2.361%"
       },
-      produccionIndustrial: "+2.1%",
-      pbiActual: "$245.000M",
-      pbiPotencial: "$290.000M",
-      reservas: "US$ 15.800M",
-      balanceFiscal: "-$12.4B",
-      finAcuerdoDias: 10
+      produccionIndustrial: "-66.92%",
+      pbiActual: "$172.841M",
+      pbiPotencial: "$300.000M",
+      reservas: "US$ 506.000M",
+      balanceFiscal: "-$90.7 Mil Millones",
+      finAcuerdoDias: 31
     },
     datosMonetarios: {
-      tasaInteres: "22%",
+      tasaInteres: "130%",
       emision: "$0",
       ofertaDemanda: "Equilibrada",
-      tensionMonetaria: "3.8/10",
+      tensionMonetaria: "3.1/10",
       intervencion: "No hubo"
     },
     consumoPrecios: {
       precios: {
-        canasta: "$115.000",
-        nafta: "$390/litro",
-        transporte: "$180",
-        alquiler: "$210.000"
+        canasta: "$10.000",
+        nafta: "$0,36/litro",
+        transporte: "$125",
+        alquiler: "$1.522,08"
       },
       variacionSectorial: {
-        alimentos: "+6.1%",
-        textil: "+4.2%",
-        construccion: "+7.5%"
+        alimentos: "-0.9%",
+        textil: "0.0%",
+        construccion: "0.0%"
       }
     },
     comercioExterior: {
-      exportaciones: "US$ 220M",
-      importaciones: "US$ 180M",
-      tratados: "Tratado MERCOSUR-Pacífico en negociación",
+      exportaciones: "US$ 33.738M",
+      importaciones: "US$ 144M",
+      tratados: "El Gobierno negocia con Argentina, Brasil y Chile.",
       productos: {
-        exportados: ["Soja", "Litio", "Software"],
-        importados: ["Electrónica", "Medicamentos"]
+        exportados: ["Joyas", "Automoviles", "Whisky"],
+        importados: ["Tecnologia", "Materia Prima"]
       },
-      fmi: "US$ 5.000M / US$ 45.000M"
+      fmi: "US$ 0M / US$ 5.000M"
     },
     empleoSociedad: {
-      empleo: "91.2%",
-      desempleo: "8.8%",
-      censo: "48.2M hab.",
-      convocatorias: "3.500 vacantes en salud y educación",
+      empleo: "88.14%",
+      desempleo: "11.86%",
+      censo: "5.3M hab.",
+      convocatorias: "Vacantes en salud y educación",
       cursos: ["Hidrógeno Verde", "Logística", "Programación"]
     },
     notificaciones: [
-      "⚠️ Inflación diaria superó el 3%: 3.4%",
-      "📢 Medidas económicas nuevas: Tope a alquileres y baja de IVA alimentos",
-      "📰 Nuevo salario promedio publicado: $520.000"
+      "⚠️ El BCRA deja de intervenir en el Mercado Cambiario",
+      "📢 Impuestos a las Ventas del 2% a partir el 1 de Junio",
+      "📰 El salario en USD perdió 180% a inicios de Mayo 2025"
     ],
     herramientas: [
-      "🔄 Convertidor Peso ↔ Dólar",
-      "💡 Calculadora de inflación acumulada",
-      "🧾 Simulador de impuestos al consumo",
-      "💬 Foro ciudadano"
+      "🔄PROXIMAMENTE "
     ],
     comunicados: {
-      resumen: "Se unifica tipo de cambio, baja retenciones",
+      resumen: "Se unifica tipo de cambio",
       conferencia: "Julieta Medina – 'Vamos por la estabilización definitiva'",
-      evento: "Licitación de deuda – 3 de junio"
+      evento: "Licitación de deuda – 1 de junio"
     }
   };
 
