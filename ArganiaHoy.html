@@ -4,44 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Argania Hoy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #004d40;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    h1, h2 {
-      margin: 0.5rem 0;
-    }
-    section {
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
-      background: white;
-    }
-    .alerta {
-      color: red;
-    }
-    .estable {
-      color: green;
-    }
-    .contenedor {
-      max-width: 800px;
-      margin: auto;
-    }
-    .titulo-seccion {
-      font-size: 1.2rem;
-      border-left: 5px solid #004d40;
-      padding-left: 0.5rem;
-      margin-top: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -49,69 +12,15 @@
     <p><em>Tu economía, al día.</em></p>
   </header>
   <main class="contenedor">
-    <section>
-      <h2 class="titulo-seccion">📱 Resumen Diario</h2>
-      <p>📈 Tipo de cambio oficial: $36,23 | Blue: $45</p>
-      <p>🛒 Inflación: Diaria 1.2% | Mensual 8.4% | Anualizada 112%</p>
-      <p>🏭 Producción industrial (ayer): +2.1%</p>
-      <p>📉 PBI actual: $245.000M | Potencial: $290.000M</p>
-      <p>💵 Reservas internacionales: US$ 15.800M</p>
-      <p>🏛️ Balance fiscal diario: -$12.4B</p>
-      <p>⏳ Fin del acuerdo "Inflación 0%": 10 días</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">💹 Datos Monetarios</h2>
-      <p>💰 Tasa BCRA: 22%</p>
-      <p>🪙 Emisión de dinero: $0 (restringida)</p>
-      <p>📊 Oferta vs. Demanda de dinero: Equilibrada</p>
-      <p>🧯 Índice de Tensión Monetaria: 3.8/10</p>
-      <p>🔄 Intervención cambiaria: No hubo</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">📦 Consumo y Precios</h2>
-      <p>🏷️ Precios: Canasta $115.000 | Nafta $390/litro | Transporte $180 | Alquiler promedio $210.000</p>
-      <p>📉 Variación intermensual por sector: Alimentos +6.1%, Textil +4.2%, Construcción +7.5%</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">🌍 Comercio Exterior y Relaciones</h2>
-      <p>🚢 Exportaciones: US$ 220M | Importaciones: US$ 180M</p>
-      <p>💬 Tratado MERCOSUR-Pacífico en negociación</p>
-      <p>📦 Más exportados: Soja, Litio, Software | Más importados: Electrónica, Medicamentos</p>
-      <p>🏦 FMI (usado/total): US$ 5.000M / US$ 45.000M</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">👥 Empleo y Sociedad</h2>
-      <p>👩‍💼 Empleo: 91.2% | Desempleo: 8.8%</p>
-      <p>🧾 Censo 2025: 48.2M hab.</p>
-      <p>💼 Convocatorias: 3.500 vacantes en salud y educación</p>
-      <p>📚 Cursos estratégicos: Hidrógeno Verde, Logística, Programación</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">🔔 Notificaciones</h2>
-      <p class="alerta">⚠️ Inflación diaria superó el 3%: 3.4%</p>
-      <p>📢 Medidas económicas nuevas: Tope a alquileres y baja de IVA alimentos</p>
-      <p>📰 Nuevo salario promedio publicado: $520.000</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">🧰 Herramientas</h2>
-      <p>🔄 Convertidor Peso ↔ Dólar</p>
-      <p>💡 Calculadora de inflación acumulada</p>
-      <p>🧾 Simulador de impuestos al consumo</p>
-      <p>💬 Foro ciudadano</p>
-    </section>
-
-    <section>
-      <h2 class="titulo-seccion">📢 Comunicados Oficiales</h2>
-      <p>📰 Resumen: Se unifica tipo de cambio, baja retenciones</p>
-      <p>🎙️ Conferencia: Julieta Medina – "Vamos por la estabilización definitiva"</p>
-      <p>📅 Próximo evento: Licitación de deuda – 3 de junio</p>
-    </section>
+    <section id="resumen-diario"></section>
+    <section id="datos-monetarios"></section>
+    <section id="consumo-precios"></section>
+    <section id="comercio-relaciones"></section>
+    <section id="empleo-sociedad"></section>
+    <section id="notificaciones"></section>
+    <section id="herramientas"></section>
+    <section id="comunicados"></section>
   </main>
+  <script src="app.js"></script>
 </body>
 </html>
