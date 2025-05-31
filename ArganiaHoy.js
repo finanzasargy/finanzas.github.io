@@ -3,43 +3,43 @@
 document.addEventListener("DOMContentLoaded", () => {
   const data = {
     resumenDiario: {
-      cambioOficial: "$26,30",
-      cambioBlue: "$30",
+      cambioOficial: "$36,65",
+      cambioBlue: "$25",
       inflacion: {
-        diaria: "1.41%",
+        diaria: "0.52%",
         mensual: "9.14%",
         anual: "2.361%"
       },
-      produccionIndustrial: "-66.92%",
-      pbiActual: "$172.841M",
+      produccionIndustrial: "-57.97%",
+      pbiActual: "$177.547M",
       pbiPotencial: "$300.000M",
-      reservas: "US$ 506.000M",
+      reservas: "US$ 510.000M",
       balanceFiscal: "-$90.7 Mil Millones",
       finAcuerdoDias: 31
     },
     datosMonetarios: {
-      tasaInteres: "130%",
+      tasaInteres: "110%",
       emision: "$0",
       ofertaDemanda: "Equilibrada",
-      tensionMonetaria: "3.1/10",
+      tensionMonetaria: "3.0/10",
       intervencion: "No hubo"
     },
     consumoPrecios: {
       precios: {
         canasta: "$10.000",
-        nafta: "$0,36/litro",
+        nafta: "$13,66/litro",
         transporte: "$125",
         alquiler: "$1.522,08"
       },
       variacionSectorial: {
-        alimentos: "-0.9%",
+        alimentos: "-0.6%",
         textil: "0.0%",
         construccion: "0.0%"
       }
     },
     comercioExterior: {
-      exportaciones: "US$ 33.738M",
-      importaciones: "US$ 144M",
+      exportaciones: "US$ 28.951M",
+      importaciones: "US$ 201M",
       tratados: "El Gobierno negocia con Argentina, Brasil y Chile.",
       productos: {
         exportados: ["Joyas", "Automoviles", "Whisky"],
@@ -55,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cursos: ["Hidrógeno Verde", "Logística", "Programación"]
     },
     notificaciones: [
-      "⚠️ El BCRA deja de intervenir en el Mercado Cambiario",
-      "📢 Impuestos a las Ventas del 2% a partir el 1 de Junio",
-      "📰 El salario en USD perdió 180% a inicios de Mayo 2025"
+      "⚠️ El BCRA Establecio nuevas bandas en la 'flotacion sucia'"
     ],
     herramientas: [
       "🔄PROXIMAMENTE "
